@@ -7,17 +7,39 @@
   </head>
   <body>
     <div id="createAccount">
-      <form action="index.html" method="post">
+      <form id="create" action="index.html" method="post">
 
+          <label for="accountNumber">Account Number:</label>
+          <input class="form-control form-control-lg" type="text" id="accNo">
+
+          <label for="firstName">First Name:</label>
+          <input class="form-control form-control-lg" type="text" id="firstName">
+
+          <label for="lastName">Last Name:</label>
+          <input class="form-control form-control-lg" type="text" id="lastName">
+
+        <input class="btn btn-primary" type="submit" name="button" onclick="createAccountRequest()">
+        <output id="newAcc"></output>
       </form>
     </div>
 
     <div id="getAnAccount">
       <input type="number" name="accountId" id="accountId">
-      <button class="btn btn-primary" type="button" name="button" onclick="getAnAccountRequest()">Get An Account</button>
+      <button class="btn btn-primary" type="button" onclick="getAnAccountRequest()">Get Account</button>
     </div>
 
+    <div id="getAllAccount">
+      <button class="btn btn-primary" type="button" onclick="getAllAccountsRequest()">Get All Accounts</button>
+      <output id="allAcc"></output>
+    </div>
 
+    <div id="deleteAccount">
+      <input type="number" name="accountId" id="delAccId">
+      <button class="btn btn-primary" type="button" onclick="removeAccountRequest()">Remove Account</button>
+      <output id="delResponse"></output>
+    </div>
+
+    <button type="button" onclick="getAll()">Test</button>
 
 
     <script type="text/javascript" src="scripts/httpRequests.js"></script>
