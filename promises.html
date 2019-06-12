@@ -8,5 +8,38 @@
     <script type="text/javascript" src="scripts/promises.js"></script>
     <input type="number" id="accountId">
     <button type="button" onclick="getAnAccount()">Get An Account</button>
+
+    <form id="create" method="post">
+
+        <label for="accountNumber">Account Number:</label>
+        <input class="form-control form-control-lg" type="text" id="accNo">
+
+        <label for="firstName">First Name:</label>
+        <input class="form-control form-control-lg" type="text" id="firstName">
+
+        <label for="lastName">Last Name:</label>
+        <input class="form-control form-control-lg" type="text" id="lastName">
+
+      <input class="btn btn-primary" type="submit" name="button" onclick="createAccount()">
+    </form>
+
+    <input type="number" id="delAccId">
+    <button type="button" onclick="deleteAccount()">Delete An Account</button>
+
+    <form id="update" method="post">
+      <label for="upId">Account Id To Update:</label>
+      <input class="form-control form-control-lg" type="number" id="upId">
+
+      <label for="upAccNo">Account Number:</label>
+      <input class="form-control form-control-lg" type="text" id="upAccNo">
+
+      <label for="upFirstName">First Name:</label>
+      <input class="form-control form-control-lg" type="text" id="upFirstName">
+
+      <label for="upLastName">Last Name:</label>
+      <input class="form-control form-control-lg" type="text" id="upLastName">
+
+    <input class="btn btn-primary" type="button" name="button" onclick="updateAccount()">
+    </form>
   </body>
 </html>

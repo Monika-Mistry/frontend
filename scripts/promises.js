@@ -33,4 +33,34 @@ const getAnAccount = () => {
   }).catch(error => console.log(error.message));
 };
 
+const createAccount = () => {
+  const acc = {
+    accountNumber : document.getElementById('accNo').value,
+    firstName : document.getElementById('firstName').value,
+    lastName : document.getElementById('lastName').value
+  };
+
+  makeRequest("POST", "http://localhost:8080/AccountSETemplate/api/account/createAccount", JSON.stringify(acc)).then(req => console.log(req)).catch(error => console.log(error.message));
+};
+
+const deleteAccount = () => {
+  let id = document.getElementById('delAccId').value;
+
+  makeRequest("DELETE", `http://localhost:8080/AccountSETemplate/api/account/deleteAccount/${id}`).then(req => {console.log(req)}).catch(error => {console.log(error.message)});
+
+};
+
+const updateAccount = () => {
+  const acc = {
+    accountNumber : document.getElementById('upAccNo').value,
+    firstName : document.getElementById('upFirstName').value,
+    lastName : document.getElementById('upLastName').value
+  };
+
+  let id = document.getElementById('upId').value;
+
+  makeRequest("PUT", `http://localhost:8080/AccountSETemplate/api/account/updateAccount/${id}`, JSON.stringify(acc)).then(req => console.log(req)
+).catch(error => console.log(error.message));
+};
+
 getAllAccounts();
